@@ -115,7 +115,12 @@ cityInput.addEventListener("keydown", function(event) {
     }
   });
   
-  locationButton.addEventListener("click",getUserCoordinates);
+  locationButton.addEventListener("click",()=>{
+    getUserCoordinates();
+    lbuttoncolorchange("#3b3838");
+  }
+    
+    );
 
   function changeColorTemporary(color) {
     
@@ -123,5 +128,14 @@ cityInput.addEventListener("keydown", function(event) {
   
     setTimeout(function() {
       searchButton.style.backgroundColor = ""; 
+    }, 100); 
+  }
+
+  function lbuttoncolorchange(color) {
+    
+    locationButton.style.backgroundColor = color;
+  
+    setTimeout(function() {
+      locationButton.style.backgroundColor = ""; 
     }, 100); 
   }
